@@ -1,63 +1,32 @@
-import React, { useState } from "react";
+import React from 'react'
 
-// import { IoSearchOutline } from "react-icons/io5";
-import { GiShoppingCart } from "react-icons/gi";
-import { CgMenu } from "react-icons/cg";
-import { navigationLinks } from "./constants";
-import TemporaryDrawer from "./drawer";
-import { Link } from "react-router-dom";
-
-const Navbar = ({ onContactClick }) => {
-  const [showDrawer, setshowDrawer] = useState(false);
-
+const Navbar = () => {
   return (
-   
-   <div className="w-full top-0 h-[12vh] fixed font-semibold z-50 flex items-center justify-center bg-[rgb(252,251,255)] shadow-lg">
-        <div className="w-[85%]">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/">
-            <h2 className='font-bold text-[13px] text-center'>HOMIQ</h2>
-          </Link>
+    <>
+         <header className="w-full bg-[white] flex items-center fixed top-0 z-50 justify-between px-6 py-4 border-b">
+      <div className="flex items-center space-x-6">
+        <h1 className="text-2xl font-bold">Medium</h1>
+        <nav className="hidden md:flex space-x-6 text-gray-700">
+          <a href="#">For you</a>
+          <a href="#">Featured</a>
+        </nav>
+      </div>
 
-          {/* Navigation Links */}
-          <ul className="flex items-center md:gap-8 lg:gap-12 hidden lg:flex">
-            {navigationLinks.map((data) => (
-              <Link
-                key={data.title}
-                to={data.path}
-                className="font-[500] cursor-pointer hover:text-[#1A5545] hover:transition-scale-[1.1] transition-all duration-300"
-              >
-                {data.title}
-              </Link>
-            ))}
-          </ul>
-
-          <button>Sign In</button>
-
-            <Link to={'/signUp'}>
-          <button className='bg-[rgb(39,33,98)] text-[black] text-[white] rounded-[40px] py-2 px-6'>Sign up</button>
-            
-            </Link>
-
-          {/* Menu Icon for Mobile */}
-          <div
-            onClick={() => setshowDrawer(true)}
-            className="lg:hidden text-white lg:text-black p-2 rounded-md"
-          >
-            <CgMenu color="black" size={24} />
-          </div>
+      <div className="flex items-center space-x-4">
+        <div className="flex items-center border rounded-full px-3 py-1">
+          {/* <Search className="w-4 h-4 text-gray-500" /> */}
+          <input
+            type="text"
+            placeholder="Search"
+            className="ml-2 outline-none text-sm"
+          />
         </div>
+        {/* <Button>Write</Button> */}
+        <div className="w-8 h-8 rounded-full bg-black"></div>
       </div>
+    </header>
+    </>
+  )
+}
 
-      {/* Drawer */}
-      <TemporaryDrawer
-        onClose={() => setshowDrawer(!showDrawer)}
-        open={showDrawer}
-      />
-      </div>
-    
-  );
-};
-
-export default Navbar;
+export default Navbar
