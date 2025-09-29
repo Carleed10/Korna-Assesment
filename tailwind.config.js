@@ -10,11 +10,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",             // 👈 scan the root HTML file
-    "./src/**/*.{js,ts,jsx,tsx}" // 👈 scan all files in src
+    "./index.html",          
+    "./src/**/*.{js,ts,jsx,tsx}" 
   ],
   theme: {
-    extend: {}, // add custom colors, fonts, etc. here
+    extend: {
+      fontFamily: {
+        Urbanist: ["Urbanist", 'sans-serif']
+      },
+    },
   },
   plugins: [],
 }
