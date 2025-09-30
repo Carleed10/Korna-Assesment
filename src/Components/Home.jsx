@@ -10,7 +10,13 @@ import { MdOutlineBookmarkAdd } from "react-icons/md";
 const Home = () => {
   return (
     <>
-      <div className="w-full flex justify-center items-center py-4">
+      <div className="w-full flex flex-col justify-center items-center py-4">
+        <header className="w-[90%]  border-b border-[rgb(244,244,244)] space-x-10 sm:w-[80%] flex">
+            <h1 className="text-[15px] border-b-2 border-black pb-2 ">For you</h1>
+            <h1 className="text-[15px]">Featured</h1>
+
+        </header>
+
         <main className="w-[90%] sm:w-[80%]">
           {posts.map((post) => (
             <div
@@ -19,7 +25,8 @@ const Home = () => {
             >
               <div className="w-[65%]">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-[rgba(252, 252, 7, 1)]"></div>
+                    <div className="w-6 h-6 rounded-full bg-[grey]"></div>
+                  
 
                   <p className="text-[10px] sm:text-[15px]">{post.category}</p>
                 </div>
@@ -33,20 +40,20 @@ const Home = () => {
                 <div className="w-full text-[rgb(155,156,147)] flex justify-between items-center mt-4">
                   <div className="flex space-x-10">
                     <small className="flex items-center text-[7px] sm:text-[10px] gap-4">
-                      <LuSparkle color="orange" size={18} /> {post.time}
+                      <LuSparkle color="orange"  className="sm:text-[18px] text-[10px]" /> {post.time}
                     </small>
                     <small className="flex items-center gap-2">
-                      <MdWavingHand size={18} /> {post.views}
+                      <MdWavingHand  className="sm:text-[18px] text-[10px]" /> {post.views}
                     </small>
                     <small className="flex items-center gap-2">
-                      <TbMessageCircleFilled size={18} /> {post.comments}
+                      <TbMessageCircleFilled className="sm:text-[18px] text-[10px]"  /> {post.comments}
                     </small>
                   </div>
 
                   <div className="flex items-center gap-4 text-2xl">
-                    <IoIosRemoveCircleOutline />
-                    <MdOutlineBookmarkAdd />
-                    <BsThreeDots />
+                    <IoIosRemoveCircleOutline  className="sm:text-[22px] text-[10px]"/>
+                    <MdOutlineBookmarkAdd  className="sm:text-[22px] text-[10px]" />
+                    <BsThreeDots  className="sm:text-[22px] text-[10px]" />
                   </div>
                 </div>
               </div>

@@ -8,7 +8,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 const Navbar = () => {
   return (
     <>
-      <header className="w-full bg-[white] border-b border-[rgb(244,244,244)] flex items-center fixed top-0 z-50 justify-between px-6 py-4 border-b">
+      <header className="w-full bg-[white] border-b border-[rgb(244,244,244)] flex items-center fixed top-0 z-50 justify-between px-8 py-4 border-b">
         <div className="flex items-center space-x-6">
 
             <RxHamburgerMenu />
@@ -24,7 +24,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-6">
           {/* <Button>Write</Button> */}
           <p className="flex hidden md:flex items-center gap-2">
             <TfiWrite size={20}/>
